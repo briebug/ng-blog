@@ -1,0 +1,6 @@
+<div id="archives" class="sidebar-widget">
+    <h3>Search</h3>
+    <ul>
+        <li ng-repeat="archive in vm.archives"><a ui-sref="articlesByMonthYear({archive: archive})">{{archive.monthYear}}</a></li>
+    </ul>
+</div>

@@ -1,0 +1,29 @@
+{
+  "name": "ng-blog",
+  "homepage": "https://github.com/briebugconsulting/ng-blog",
+  "authors": [
+    "Jesse Sanders <jesse.sanders@briebug.com>"
+  ],
+  "description": "Angular blog components",
+  "main": [
+    "dist/ng-blog.css",
+    "dist/ng-blog.js"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "report",
+    "build",
+    ".tmp"
+  ],
+  "dependencies": {
+    "angular": "^1.4.5"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.4.5",
+    "sinon": "http://sinonjs.org/releases/sinon-1.12.1.js",
+    "bardjs": "^0.1.4"
+  }
+}

@@ -1,0 +1,11 @@
+<div class="single-content">
+    <div class="post-header single-header-outer">
+        <h2>{{vm.post.title}}</h2>
+        <span class="post-date">{{vm.post.scheduled | date : format : longDate}}</span>
+        <span class="post-author">By <a ui-sref="postsByAuthor({author: vm.post.author})">{{vm.post.author}}</a></span>
+    </div>
+
+    <div class="single-content-outer">
+        <p ng-bind-html="vm.post.body | htmlSanitize"></p>
+    </div>
+</div>

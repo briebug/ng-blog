@@ -1,0 +1,6 @@
+<div id="recent-post" class="sidebar-widget">
+    <h3>Recent Post</h3>
+    <ul>
+        <li ng-repeat="article in vm.articles"><a ui-sref="article({linkUrl: article.linkUrl})">{{article.title}}</a></li>
+    </ul>
+</div>

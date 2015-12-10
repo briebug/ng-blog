@@ -1,0 +1,6 @@
+<div id="categories" class="sidebar-widget">
+    <h3>Categories</h3>
+    <ul>
+        <li ng-repeat="category in vm.categories"><a ui-sref="articlesByCategory({category: category})">{{category.name}}</a></li>
+    </ul>
+</div>
