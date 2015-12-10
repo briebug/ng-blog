@@ -12,14 +12,9 @@
             scope: {
                 post: '='
             },
-            controller: PostSummaryController,
+            controller: function() {},
             controllerAs: 'vm',
             bindToController: true
         };
-    }
-
-    PostSummaryController.$inject = [];
-    function PostSummaryController() {
-        var vm = this;
     }
 })();

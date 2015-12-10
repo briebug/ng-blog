@@ -80,15 +80,6 @@
 (function() {
     'use strict';
 
-    angular.module('ngBlog.components.posts',
-    [
-
-    ]);
-})();
-
-(function() {
-    'use strict';
-
     angular.module('ngBlog.components.recentPosts', []);
 })();
 
@@ -112,9 +103,13 @@ app.filter('hyphenate', hyphenateFilter);
 
 function hyphenateFilter() {
     return function(text) {
-        return text.replace(/\s+/g, '-')
-            .replace(/\./g, '-')
-            .toLowerCase();
+        if (text) {
+            return text.replace(/\s+/g, '-')
+                .replace(/\./g, '-')
+                .toLowerCase();
+        } else {
+            return text;
+        }
     };
 }
 
@@ -486,41 +481,10 @@ function hyphenateFilter() {
             scope: {
                 post: '='
             },
-            controller: PostSummaryController,
+            controller: function() {},
             controllerAs: 'vm',
             bindToController: true
         };
-    }
-
-    PostSummaryController.$inject = [];
-    function PostSummaryController() {
-        var vm = this;
-    }
-})();
-
-(function() {
-    'use strict';
-
-    angular
-        .module('ngBlog.components.posts')
-        .directive('posts', postsDirective);
-
-    function postsDirective() {
-        return {
-            restrict: 'E',
-            templateUrl: 'js/components/posts/posts.html',
-            scope: {
-                posts: '='
-            },
-            controller: PostsController,
-            controllerAs: 'vm',
-            bindToController: true
-        };
-    }
-
-    PostsController.$inject = [];
-    function PostsController() {
-
     }
 })();
 

@@ -34,16 +34,12 @@
 
             // wait for angular
             $rootScope.$digest();
-
-            vm = element.controller('postSummary');
-            vm.post = [{id: 1, title: 'My new post', body: 'This is the body of my new directive.'}];
         });
 
         bard.verifyNoOutstandingHttpRequests();
 
         it('should create directive', function() {
             expect(element).to.be.defined;
-            expect(vm).to.be.defined;
         });
     });
 })();
