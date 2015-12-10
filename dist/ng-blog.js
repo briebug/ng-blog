@@ -50,19 +50,19 @@
 (function() {
     'use strict';
 
-    angular.module('ngBlog.archives', []);
+    angular.module('ngBlog.components.archives', []);
 })();
 
 (function() {
     'use strict';
 
-    angular.module('ngBlog.categories', []);
+    angular.module('ngBlog.components.categories', []);
 })();
 
 (function () {
     'use strict';
 
-    angular.module('ngBlog.post', [
+    angular.module('ngBlog.components.post', [
         'ngBlog.filters.htmlSanitize'
     ]);
 })();
@@ -70,7 +70,7 @@
 (function() {
     'use strict';
 
-    angular.module('ngBlog.postSummary',
+    angular.module('ngBlog.components.postSummary',
     [
         'ngBlog.filters.htmlSanitize',
         'ngBlog.filters.hyphenate'
@@ -80,7 +80,7 @@
 (function() {
     'use strict';
 
-    angular.module('ngBlog.posts',
+    angular.module('ngBlog.components.posts',
     [
 
     ]);
@@ -89,13 +89,13 @@
 (function() {
     'use strict';
 
-    angular.module('ngBlog.recentPosts', []);
+    angular.module('ngBlog.components.recentPosts', []);
 })();
 
 (function() {
     'use strict';
 
-    angular.module('ngBlog.search', []);
+    angular.module('ngBlog.components.search', []);
 })();
 
 var app = angular.module('ngBlog.filters.htmlSanitize', []);
@@ -399,7 +399,7 @@ function hyphenateFilter() {
     'use strict';
 
     angular
-        .module('ngBlog.archives')
+        .module('ngBlog.components.archives')
         .directive('archives', archivesDirective);
 
     function archivesDirective() {
@@ -425,7 +425,7 @@ function hyphenateFilter() {
     'use strict';
 
     angular
-        .module('ngBlog.categories')
+        .module('ngBlog.components.categories')
         .directive('categories', categoriesDirective);
 
     function categoriesDirective() {
@@ -450,7 +450,7 @@ function hyphenateFilter() {
 (function () {
     'use strict';
 
-    angular.module('ngBlog.post')
+    angular.module('ngBlog.components.post')
         .directive('post', postDirective);
 
     function postDirective() {
@@ -476,7 +476,7 @@ function hyphenateFilter() {
     'use strict';
 
     angular
-        .module('ngBlog.postSummary')
+        .module('ngBlog.components.postSummary')
         .directive('postSummary', postSummaryDirective);
 
     function postSummaryDirective() {
@@ -502,7 +502,7 @@ function hyphenateFilter() {
     'use strict';
 
     angular
-        .module('ngBlog.posts')
+        .module('ngBlog.components.posts')
         .directive('posts', postsDirective);
 
     function postsDirective() {
@@ -528,7 +528,7 @@ function hyphenateFilter() {
     'use strict';
 
     angular
-        .module('ngBlog.recentPosts')
+        .module('ngBlog.components.recentPosts')
         .directive('recentPosts', recentPostsDirective);
 
     function recentPostsDirective() {
@@ -554,7 +554,7 @@ function hyphenateFilter() {
     'use strict';
 
     angular
-        .module('ngBlog.search')
+        .module('ngBlog.components.search')
         .directive('search', searchDirective);
 
     function searchDirective() {
