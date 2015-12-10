@@ -1,5 +1,5 @@
 (function() {
     'use strict';
 
-    angular.module('ngBlog.archives', []);
+    angular.module('ngBlog.components.archives', []);
 })();

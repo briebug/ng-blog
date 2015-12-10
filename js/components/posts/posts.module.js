@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('ngBlog.posts',
+    angular.module('ngBlog.components.posts',
     [
 
     ]);

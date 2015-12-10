@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('ngBlog.posts')
+        .module('ngBlog.components.posts')
         .directive('posts', postsDirective);
 
     function postsDirective() {

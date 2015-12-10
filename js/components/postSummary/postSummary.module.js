@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('ngBlog.postSummary',
+    angular.module('ngBlog.components.postSummary',
     [
         'ngBlog.filters.htmlSanitize',
         'ngBlog.filters.hyphenate'

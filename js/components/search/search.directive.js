@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('ngBlog.search')
+        .module('ngBlog.components.search')
         .directive('search', searchDirective);
 
     function searchDirective() {

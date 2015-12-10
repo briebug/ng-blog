@@ -1,5 +1,5 @@
 (function() {
     'use strict';
 
-    angular.module('ngBlog.recentPosts', []);
+    angular.module('ngBlog.components.recentPosts', []);
 })();

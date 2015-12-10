@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('ngBlog.categories')
+        .module('ngBlog.components.categories')
         .directive('categories', categoriesDirective);
 
     function categoriesDirective() {

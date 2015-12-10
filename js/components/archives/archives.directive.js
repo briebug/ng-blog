@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('ngBlog.archives')
+        .module('ngBlog.components.archives')
         .directive('archives', archivesDirective);
 
     function archivesDirective() {

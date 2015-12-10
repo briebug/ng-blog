@@ -9,7 +9,7 @@
         // inject modules
         beforeEach(function() {
             // bard.appModule pulls in the required modules to run the test
-            bard.appModule('ngBlog.posts');
+            bard.appModule('ngBlog.components.posts');
 
             // bard.inject adds dependencies to the global namespace
             bard.inject(

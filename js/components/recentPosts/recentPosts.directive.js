@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('ngBlog.recentPosts')
+        .module('ngBlog.components.recentPosts')
         .directive('recentPosts', recentPostsDirective);
 
     function recentPostsDirective() {

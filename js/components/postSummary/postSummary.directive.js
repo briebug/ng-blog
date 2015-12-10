@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('ngBlog.postSummary')
+        .module('ngBlog.components.postSummary')
         .directive('postSummary', postSummaryDirective);
 
     function postSummaryDirective() {
