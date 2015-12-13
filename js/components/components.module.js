@@ -15,7 +15,6 @@
         'ngBlog.components.archives',
         'ngBlog.components.categories',
         'ngBlog.components.post',
-        'ngBlog.components.posts',
         'ngBlog.components.postSummary',
         'ngBlog.components.recentPosts',
         'ngBlog.components.search',
