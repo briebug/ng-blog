@@ -3,7 +3,7 @@
 
     angular.module('ngBlog.components.postSummary',
     [
-        'ngBlog.filters.htmlSanitize',
+        'ngBlog.filters.htmlExcerpt',
         'ngBlog.filters.hyphenate'
     ]);
 })();

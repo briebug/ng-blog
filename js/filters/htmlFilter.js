@@ -1,7 +1,13 @@
-var app = angular.module('ngBlog.filters.htmlSanitize', []);
+(function() {
+    'use strict';
 
-app.filter('htmlSanitize', ['$sce', function($sce) {
-    return function(htmlCode) {
-        return $sce.trustAsHtml(htmlCode);
-    };
-}]);
+    angular.module('ngBlog.filters.htmlSanitize', [])
+        .filter('htmlSanitize', htmlSanitizeFilter);
+
+    htmlSanitizeFilter.$inject = ['$sce'];
+    function htmlSanitizeFilter($sce) {
+        return function(htmlCode) {
+            return $sce.trustAsHtml(htmlCode);
+        };
+    }
+})();
