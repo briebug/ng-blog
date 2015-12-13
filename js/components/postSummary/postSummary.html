@@ -5,8 +5,10 @@
     <div class="post-content-outer">
         <div class="post-header">
             <h3><a ui-sref="post({year: (vm.post.scheduled | date:'yyyy'), month: (vm.post.scheduled | date:'MM'), day: (vm.post.scheduled | date:'dd'), name: (vm.post.title | hyphenate)})">{{vm.post.title}}</a></h3>
+        </div>
+        <div class="post-sub-header">
             <span class="post-date">{{vm.post.scheduled | date : format : longDate}}</span>
-            <span> | </span>
+            <span>&nbsp;|&nbsp;</span>
             <span class="post-author">By <a ui-sref="postsByAuthor({author: vm.post.author})">{{vm.post.author}}</a></span>
         </div>
 

@@ -49,6 +49,12 @@
 (function() {
     'use strict';
 
+    angular.module('ngBlog.components.archives', []);
+})();
+
+(function() {
+    'use strict';
+
     angular.module('ngBlog.components.categories', []);
 })();
 
@@ -58,12 +64,6 @@
     angular.module('ngBlog.components.post', [
         'ngBlog.filters.htmlSanitize'
     ]);
-})();
-
-(function() {
-    'use strict';
-
-    angular.module('ngBlog.components.archives', []);
 })();
 
 (function() {
@@ -419,6 +419,32 @@
     'use strict';
 
     angular
+        .module('ngBlog.components.archives')
+        .directive('archives', archivesDirective);
+
+    function archivesDirective() {
+        return {
+            restrict: 'E',
+            templateUrl: 'js/components/archives/archives.html',
+            scope: {
+                archives: '='
+            },
+            controller: SearchController,
+            controllerAs: 'vm',
+            bindToController: true
+        };
+    }
+
+    SearchController.$inject = [];
+    function SearchController() {
+
+    }
+})();
+
+(function() {
+    'use strict';
+
+    angular
         .module('ngBlog.components.categories')
         .directive('categories', categoriesDirective);
 
@@ -463,32 +489,6 @@
     PostController.$inject = [];
     function PostController() {
         var vm = this;
-    }
-})();
-
-(function() {
-    'use strict';
-
-    angular
-        .module('ngBlog.components.archives')
-        .directive('archives', archivesDirective);
-
-    function archivesDirective() {
-        return {
-            restrict: 'E',
-            templateUrl: 'js/components/archives/archives.html',
-            scope: {
-                archives: '='
-            },
-            controller: SearchController,
-            controllerAs: 'vm',
-            bindToController: true
-        };
-    }
-
-    SearchController.$inject = [];
-    function SearchController() {
-
     }
 })();
 
@@ -565,9 +565,9 @@
     }
 })();
 
-angular.module("ngBlog").run(["$templateCache", function($templateCache) {$templateCache.put("js/components/archives/archives.html","<div id=archives class=sidebar-widget><h3>Search</h3><ul><li ng-repeat=\"archive in vm.archives\"><a ui-sref=\"articlesByMonthYear({archive: archive})\">{{archive.monthYear}}</a></li></ul></div>");
+angular.module("ngBlog").run(["$templateCache", function($templateCache) {$templateCache.put("js/components/archives/archives.html","<div id=archives class=sidebar-widget><h3>Archives</h3><ul><li ng-repeat=\"archive in vm.archives\"><a ui-sref=\"articlesByMonthYear({archive: archive})\">{{archive.monthYear}}</a></li></ul></div>");
 $templateCache.put("js/components/categories/categories.html","<div id=categories class=sidebar-widget><h3>Categories</h3><ul><li ng-repeat=\"category in vm.categories\"><a ui-sref=\"articlesByCategory({category: category})\">{{category.name}}</a></li></ul></div>");
 $templateCache.put("js/components/post/post.html","<div class=single-content><div class=\"post-header single-header-outer\"><h2>{{vm.post.title}}</h2><span class=post-date>{{vm.post.scheduled | date : format : longDate}}</span> <span class=post-author>By <a ui-sref=\"postsByAuthor({author: vm.post.author})\">{{vm.post.author}}</a></span></div><div class=single-content-outer><p ng-bind-html=\"vm.post.body | htmlSanitize\"></p></div></div>");
-$templateCache.put("js/components/postSummary/postSummary.html","<div class=post-content-con><div class=post-image-outer ng-show=vm.post.header.imageUrl><a ui-sref=\"post({linkUrl: vm.post.link})\"><img ng-src=vm.post.header.imageUrl alt=vm.post.header.imageAlt></a></div><div class=post-content-outer><div class=post-header><h3><a ui-sref=\"post({year: (vm.post.scheduled | date:\'yyyy\'), month: (vm.post.scheduled | date:\'MM\'), day: (vm.post.scheduled | date:\'dd\'), name: (vm.post.title | hyphenate)})\">{{vm.post.title}}</a></h3><span class=post-date>{{vm.post.scheduled | date : format : longDate}}</span> <span>|</span> <span class=post-author>By <a ui-sref=\"postsByAuthor({author: vm.post.author})\">{{vm.post.author}}</a></span></div><div class=post-content><p ng-bind-html=\"vm.post.body | htmlExcerpt\"></p></div></div></div>");
+$templateCache.put("js/components/postSummary/postSummary.html","<div class=post-content-con><div class=post-image-outer ng-show=vm.post.header.imageUrl><a ui-sref=\"post({linkUrl: vm.post.link})\"><img ng-src=vm.post.header.imageUrl alt=vm.post.header.imageAlt></a></div><div class=post-content-outer><div class=post-header><h3><a ui-sref=\"post({year: (vm.post.scheduled | date:\'yyyy\'), month: (vm.post.scheduled | date:\'MM\'), day: (vm.post.scheduled | date:\'dd\'), name: (vm.post.title | hyphenate)})\">{{vm.post.title}}</a></h3></div><div class=post-sub-header><span class=post-date>{{vm.post.scheduled | date : format : longDate}}</span> <span>&nbsp;|&nbsp;</span> <span class=post-author>By <a ui-sref=\"postsByAuthor({author: vm.post.author})\">{{vm.post.author}}</a></span></div><div class=post-content><p ng-bind-html=\"vm.post.body | htmlExcerpt\"></p></div></div></div>");
 $templateCache.put("js/components/recentPosts/recentPosts.html","<div id=recent-post class=sidebar-widget><h3>Recent Posts</h3><ul><li ng-repeat=\"post in vm.recentPosts\"><a ui-sref=\"post({linkUrl: post.linkUrl})\">{{post.title}}</a></li></ul></div>");
 $templateCache.put("js/components/search/search.html","<div id=search class=sidebar-widget><input type=text name=search></div>");}]);
