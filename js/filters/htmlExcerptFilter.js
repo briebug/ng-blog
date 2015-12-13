@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('ngBlog.filters.htmlExcerpt', [])
+    angular.module('ngBlog.filters.htmlExcerpt', ['ngLodash'])
         .filter('htmlExcerpt', htmlExcerptFilter);
 
     htmlExcerptFilter.$inject = ['$sce', '$filter', 'lodash'];
