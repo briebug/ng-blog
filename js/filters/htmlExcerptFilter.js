@@ -8,7 +8,7 @@
 
     function htmlExcerptFilter($sce, $filter, lodash) {
         return function(html) {
-            var excerpt = lodash.trunc(html, {length: 100, separator: / /});
+            var excerpt = lodash.trunc(html, {length: 250, separator: / /});
 
             return $sce.trustAsHtml(excerpt);
         };

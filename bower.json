@@ -20,7 +20,7 @@
     ".tmp",
     ".jscsrc",
     ".jshintrc",
-    "gulp.config",
+    "gulp.config.js",
     "gulpfile.js",
     "karma.conf.js",
     "package.json"
