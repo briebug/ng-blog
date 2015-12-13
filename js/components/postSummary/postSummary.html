@@ -2,7 +2,6 @@
     <div class="post-image-outer" ng-show="vm.post.header.imageUrl">
         <a ui-sref="post({linkUrl: vm.post.link})"><img ng-src="vm.post.header.imageUrl" alt="vm.post.header.imageAlt"></a>
     </div>
-
     <div class="post-content-outer">
         <div class="post-header">
             <h3><a ui-sref="post({year: (vm.post.scheduled | date:'yyyy'), month: (vm.post.scheduled | date:'MM'), day: (vm.post.scheduled | date:'dd'), name: (vm.post.title | hyphenate)})">{{vm.post.title}}</a></h3>

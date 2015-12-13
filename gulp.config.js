@@ -40,7 +40,8 @@ module.exports = function() {
         js: [
             clientApp + '**/*.module.js',
             clientApp + '**/*.js',
-            '!' + clientApp + '**/*.spec.js'
+            '!' + clientApp + '**/*.spec.js',
+            temp + 'templates.js'
         ],
         jsOrder: [
             '**/ng-blog.module.js',

@@ -205,9 +205,9 @@ gulp.task('build', ['optimize', 'fonts'], function(done) {
  */
 gulp.task('optimize', ['inject', 'test', 'dist-files']);
 
-gulp.task('dist-files', ['dist-scripts-min', 'dist-scripts', 'dist-styles-min', 'dist-styles']);
+gulp.task('dist-files', ['templatecache', 'dist-scripts-min', 'dist-scripts', 'dist-styles-min', 'dist-styles']);
 
-gulp.task('dist-scripts-min', function() {
+gulp.task('dist-scripts-min', ['templatecache'], function() {
     return gulp.src(config.js)
         .pipe($.concat(config.name + '.min.js'))
         .pipe($.stripDebug())
@@ -215,7 +215,7 @@ gulp.task('dist-scripts-min', function() {
         .pipe(gulp.dest(config.dist));
 });
 
-gulp.task('dist-scripts', function() {
+gulp.task('dist-scripts', ['templatecache'], function() {
     return gulp.src(config.js)
         .pipe($.concat(config.name + '.js'))
         .pipe(gulp.dest(config.dist));
