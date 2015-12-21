@@ -56,3 +56,10 @@ h3 {
 	font-family: 'Helvetica';
 	text-align: left;
 }
+
+.sidebar-widget ul li a {
+	font-family: 'Helvetica';
+	color: #808080;
+	font-size: 16px;
+	line-height: 22px;
+}

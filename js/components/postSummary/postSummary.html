@@ -13,7 +13,7 @@
         </div>
 
         <div class="row post-content">
-            <p ng-bind-html="vm.post.body | htmlExcerpt"></p>
+            <p ng-bind-html="vm.post.body | stripHTML | htmlExcerpt"></p>
         </div>
     </div>
 </div>
