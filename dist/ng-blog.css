@@ -104,7 +104,7 @@ p {
 	font-size: 24px;
 }
 
-.post-author, .post-date {
+.post-author {
 	border-left: 2px solid #0b9093;
 	line-height: 23px;
 	margin-top: 4.6px;
@@ -164,7 +164,6 @@ p {
 }
 
 @media only screen and (max-width: 480px) {
-
 	.single-header-outer h2 {
 		font-size: 30px;
 		font-weight: 200;
@@ -182,5 +181,62 @@ p {
 		font-size: 16px;
 		margin-bottom: 15px;
 	}
+}
 
+
+.post-image-outer{
+	float: left;
+	width: 100%;
+}
+.post-image-outer img:hover{
+	opacity: 0.8;
+}
+.post-content-outer{
+	float: left;
+	width: 100%;
+	padding: 20px 8% 19px;
+}
+.post-header{
+	float: left;
+	width: 100%;
+}
+.post-header h3 {
+	font-size: 24px;
+	line-height: 30px;
+}
+.post-header h3 a {
+	color: #ed500d;
+	text-transform: capitalize;
+	margin: 0 0 4px;
+}
+.post-header span{
+	font-size: 14px;
+	color: #0b9093;
+	text-transform: capitalize;
+	font-family: 'Helvetica';
+	float: left;
+	width: auto;
+	margin-bottom: 7px;
+}
+.post-author{
+	margin-left: 6px;
+	border-left: 1px solid #0b9093;
+	padding-left: 6px;
+}
+.post-author a{
+	color: #0b9093;
+	text-transform: capitalize;
+	font-size: 16px;
+	font-family: 'Helvetica';
+}
+.post-content{
+	float: left;
+	width: 100%;
+}
+.post-content p {
+	float: left;
+	width: 100%;
+	margin: 0;
+	font-size: 16px;
+	line-height: 30px;
 }
