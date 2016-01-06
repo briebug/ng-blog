@@ -89,68 +89,6 @@
     angular.module('ngBlog.components.search', []);
 })();
 
-(function() {
-    'use strict';
-
-    angular.module('ngBlog.filters.htmlExcerpt', ['ngLodash'])
-        .filter('htmlExcerpt', htmlExcerptFilter);
-
-    htmlExcerptFilter.$inject = ['$sce', '$filter', 'lodash'];
-
-    function htmlExcerptFilter($sce, $filter, lodash) {
-        return function(html) {
-            var excerpt = lodash.trunc(html, {length: 250, separator: / /});
-
-            return $sce.trustAsHtml(excerpt);
-        };
-    }
-})();
-
-(function() {
-    'use strict';
-
-    angular.module('ngBlog.filters.htmlSanitize', [])
-        .filter('htmlSanitize', htmlSanitizeFilter);
-
-    htmlSanitizeFilter.$inject = ['$sce'];
-    function htmlSanitizeFilter($sce) {
-        return function(htmlCode) {
-            return $sce.trustAsHtml(htmlCode);
-        };
-    }
-})();
-
-(function() {
-    'use strict';
-
-    angular.module('ngBlog.filters.hyphenate', [])
-        .filter('hyphenate', hyphenateFilter);
-
-    function hyphenateFilter() {
-        return function(text) {
-            if (text) {
-                return text.replace(/\s+/g, '-')
-                    .replace(/\./g, '-')
-                    .toLowerCase();
-            } else {
-                return text;
-            }
-        };
-    }
-})();
-
-(function() {
-    var app = angular.module('ngBlog.filters.stripHTML', []);
-
-    app.filter('stripHTML', stripHTMLFilter);
-
-    function stripHTMLFilter() {
-        return function(text) {
-            return text.replace(/<(?:.|\n)*?>/gm, '');
-        };
-    }
-})();
-
 (function () {
     'use strict';
 
@@ -426,6 +364,68 @@
         }
     }
 
+})();
+
+(function() {
+    'use strict';
+
+    angular.module('ngBlog.filters.htmlExcerpt', ['ngLodash'])
+        .filter('htmlExcerpt', htmlExcerptFilter);
+
+    htmlExcerptFilter.$inject = ['$sce', '$filter', 'lodash'];
+
+    function htmlExcerptFilter($sce, $filter, lodash) {
+        return function(html) {
+            var excerpt = lodash.trunc(html, {length: 250, separator: / /});
+
+            return $sce.trustAsHtml(excerpt);
+        };
+    }
+})();
+
+(function() {
+    'use strict';
+
+    angular.module('ngBlog.filters.htmlSanitize', [])
+        .filter('htmlSanitize', htmlSanitizeFilter);
+
+    htmlSanitizeFilter.$inject = ['$sce'];
+    function htmlSanitizeFilter($sce) {
+        return function(htmlCode) {
+            return $sce.trustAsHtml(htmlCode);
+        };
+    }
+})();
+
+(function() {
+    'use strict';
+
+    angular.module('ngBlog.filters.hyphenate', [])
+        .filter('hyphenate', hyphenateFilter);
+
+    function hyphenateFilter() {
+        return function(text) {
+            if (text) {
+                return text.replace(/\s+/g, '-')
+                    .replace(/\./g, '-')
+                    .toLowerCase();
+            } else {
+                return text;
+            }
+        };
+    }
+})();
+
+(function() {
+    var app = angular.module('ngBlog.filters.stripHTML', []);
+
+    app.filter('stripHTML', stripHTMLFilter);
+
+    function stripHTMLFilter() {
+        return function(text) {
+            return text.replace(/<(?:.|\n)*?>/gm, '');
+        };
+    }
 })();
 
 (function() {

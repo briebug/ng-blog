@@ -1,3 +1,80 @@
+/*header*/
+
+.contact a {
+	font-weight: bold;
+}
+/*header end*/
+/*------------- banner --------------*/
+
+.banner-container {
+	float: left;
+	width: 100%;
+	position: relative;
+}
+
+.banner-container img{
+	width: 100%;
+}
+
+.bannaer-title{
+	float: left;
+	width: 100%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	text-align: center;
+
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.bannaer-title h1{
+	color: #ffffff;
+}
+
+.bannaer-title {
+	float: left;
+	width: 100%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	text-align: center;
+}
+
+.inner-banner {
+	float: left;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+	height: 185px;
+	margin-bottom: 75px;
+}
+
+.inner-banner-sm{
+	float: left;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+	height: 75px;
+	margin-bottom: 75px;
+}
+
+.inner-banner-sm img {
+	width: 100%;
+}
+
+/*------------- banner end --------------*/
+
+.container-blog {
+	width: 100%;
+	max-width: 1170px;
+	min-width: 296px;
+	margin: 0px auto;
+}
+
 .blog {
 	margin: 0px;
 	width: 100%;
@@ -25,6 +102,87 @@
 	margin-top: 0;
 
 }
+
+.section {
+	Width:100%;
+}
+
+
+/*------------- article --------------*/
+.article.post-content-con {
+	float: left;
+	width: 100%;
+	height: auto;
+	border: 1px solid #b3b3b3;
+	margin: 8px 8px 8px 8px;
+	display: inline-block;
+	position: relative;
+}
+
+.post-image-outer {
+	float: left;
+	width: 100%;
+}
+
+.post-content-outer {
+	float: left;
+	width: 100%;
+	padding: 7% 8% 7%;
+}
+
+.post-header {
+	float: left;
+	width: 100%;
+}
+
+.post-header h3 {
+	color: #ed500d;
+	text-transform: capitalize;
+	margin: 5px 0 10px;
+}
+
+.post-header span {
+	color: #0b9093;
+	text-transform: capitalize;
+	font-size: 14px;
+	font-family: 'Helvetica';
+	float: left;
+	width: auto;
+	margin-top: 4.6px;
+	margin-bottom: 5px;
+}
+
+.post-author{
+	margin-left: 6px;
+	border-left: 1px solid #0b9093;
+	padding-left: 11px;
+}
+
+.post-date {
+	padding-right: 6px;
+}
+
+.post-author a {
+	color: #0b9093;
+}
+
+.post-content {
+	float: left;
+	width: 100%;
+}
+
+.section {
+	display:block;
+}
+
+h3 a:hover {
+	color: #0b9093;
+	text-decoration: none;
+}
+
+
+
+/*------------- article end --------------*/
 
 .archive {
 	margin-top: 8px;
@@ -54,6 +212,65 @@
 
 }
 
+/* Archive */
+
+.sidebar-widget{
+	float: left;
+	width: 100%;
+	margin-bottom: 29px;
+}
+.sidebar-widget h3{
+	color: #1b8e93;
+	margin-bottom: 15px;
+}
+.sidebar-widget ul{
+	float: left;
+	width: 100%;
+	list-style: none;
+}
+.sidebar-widget ul li{
+	float: left;
+	width: 100%;
+	margin-bottom: 9px;
+}
+.sidebar-widget ul li a{
+	float: left;
+	width: 100%;
+	font-family: 'Helvetica';
+	color: #808080;
+	font-size: 16px;
+	line-height: 25px;
+	margin-bottom: 4px;
+}
+
+.sidebar-widget ul li a:hover,
+.sidebar-widget ul li a:focus,
+.sidebar-widget ul li a:active{
+	text-decoration: none;
+	color: #ed500d;
+}
+
+#search{
+	margin: 0 0 15px;
+}
+#search input {
+	position: relative;
+	float: left;
+	width: 100%;
+	border: 1px solid #cccccc;
+	background: url('../images/search.jpg') no-repeat 95.5% center #ffffff;
+	padding: 6px 30px 6px 10px;
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+	-webkit-box-shadow: 0 9px 15px -20px rgba(0, 0, 0, 0.8) inset;
+	-moz-box-shadow: 0 9px 15px -20px rgba(0, 0, 0, 0.8) inset;
+	box-shadow: 0 9px 15px -20px rgba(0, 0, 0, 0.8) inset;
+}
+
+
 /*------------- single post --------------*/
 
 .banner-container {
@@ -70,6 +287,7 @@
 	font-weight: 200;
 	line-height: 60px;
 	margin-bottom: 25px;
+	color: #e54f00;
 }
 
 .single-header-outer {
@@ -87,6 +305,18 @@
 .single-content-outer h6  {
 	font-size: 22px;
 	margin-bottom: 15px;
+	margin-top: 25px;
+	float: left;
+	width: 100%;
+	color: #1b8e93;
+}
+
+.single-content-outer {
+	float: left;
+	width: 100%;
+	padding-bottom: 35px;
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 26px;
 }
 
 p {
@@ -104,11 +334,12 @@ p {
 	font-size: 24px;
 }
 
-.post-author {
-	border-left: 2px solid #0b9093;
-	line-height: 23px;
-	margin-top: 4.6px;
+.single-content a.add-comment{
+	color: #808080;
 }
+
+
+
 
 @media only screen and (max-width: 1023px) {
 	.post-author {
@@ -121,11 +352,31 @@ p {
 		font-size: 16px;
 		line-height: 28px;
 	}
+
+	.inner-banner {
+		float: left;
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+		text-align: center;
+		height: 150px;
+		margin-bottom: 50px;
+	}
+
+	.inner-banner-sm{
+		float: left;
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+		text-align: center;
+		height: 75px;
+		margin-bottom: 50px;
+	}
 }
 
 
 /* All Mobile Sizes (devices and browser) */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
 
 	.single-header-outer h2 {
 		font-size: 40px;
@@ -135,17 +386,23 @@ p {
 	}
 
 	.post-header span {
-		font-size: 16px;
+		font-size: 15px;
+		line-height: 14px;
 	}
 
 	.post-author {
 		font-size: 15px;
 		border-left: 2px solid #0b9093;
 		line-height: 14px;
-		margin: 3.8px 0 0 8px;
-		padding-left: 8px;
-
 	}
+
+	.post-author a {
+		color: #0b9093;
+		text-transform: capitalize;
+		font-size: 14px;
+		font-family: 'Helvetica';
+	}
+
 
 	.single-header-outer span a {
 		font-size: 15px;
@@ -161,9 +418,29 @@ p {
 		margin-bottom: 4px;
 	}
 
+	.inner-banner {
+		float: left;
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+		text-align: center;
+		margin-bottom: 15px;
+	}
+
+	.inner-banner-sm{
+		float: left;
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+		text-align: center;
+		height: 75px;
+		margin-bottom: 15px;
+	}
+
 }
 
 @media only screen and (max-width: 480px) {
+
 	.single-header-outer h2 {
 		font-size: 30px;
 		font-weight: 200;
@@ -177,66 +454,116 @@ p {
 		margin-bottom: 30px;
 	}
 
+
 	.single-content-outer h6 {
 		font-size: 16px;
 		margin-bottom: 15px;
 	}
+
+	.articles-wrapper {
+		position: relative;
+		min-height: 1px;
+		padding-right: 15px;
+		margin-top: -25px;
+	}
+
+	.inner-banner {
+		float: left;
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+		text-align: center;
+		height: 50px;
+		margin-bottom: 45px;
+	}
+
+	.inner-banner-sm{
+		float: left;
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+		text-align: center;
+		height: 75px;
+		margin-bottom: 15px;
+	}
+
 }
 
+
+/* Style.css */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+	list-style: none;
+	font-family: "Helvetica Neue";
+}
+
+body {
+	background: #ffffff;
+}
+
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+	display: block;
+}
+
+.header-outer-container{
+	float: left;
+	width: 100%;
+	padding: 14px 2.5%;
+}
+
+.post-header{
+	float: left;
+	width: 100%;
+}
+
+.post-header h3{
+	color: #ed500d;
+	text-transform: capitalize;
+	margin: 5px 0 10px;
+}
+
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
 
 .post-image-outer{
 	float: left;
 	width: 100%;
 }
+
 .post-image-outer img:hover{
 	opacity: 0.8;
 }
-.post-content-outer{
+
+article.post-content-con{
 	float: left;
+	width:100%;
+	height: auto;
+	border: 1px solid #b3b3b3;
+	margin: 8px 8px 8px 8px;
+	display: inline-block;
+	position: relative;
+}
+
+.post-image-outer a img {
+	border: 0;
 	width: 100%;
-	padding: 20px 8% 19px;
-}
-.post-header{
-	float: left;
-	width: 100%;
-}
-.post-header h3 {
-	font-size: 24px;
-	line-height: 30px;
-}
-.post-header h3 a {
-	color: #ed500d;
-	text-transform: capitalize;
-	margin: 0 0 4px;
-}
-.post-header span{
-	font-size: 14px;
-	color: #0b9093;
-	text-transform: capitalize;
-	font-family: 'Helvetica';
-	float: left;
-	width: auto;
-	margin-bottom: 7px;
-}
-.post-author{
-	margin-left: 6px;
-	border-left: 1px solid #0b9093;
-	padding-left: 6px;
-}
-.post-author a{
-	color: #0b9093;
-	text-transform: capitalize;
-	font-size: 16px;
-	font-family: 'Helvetica';
-}
-.post-content{
-	float: left;
-	width: 100%;
-}
-.post-content p {
-	float: left;
-	width: 100%;
-	margin: 0;
-	font-size: 16px;
-	line-height: 30px;
 }
