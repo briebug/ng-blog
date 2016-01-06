@@ -9,7 +9,7 @@
             <span class="post-author">By <a ui-sref="postsByAuthor({author: vm.post.author})">{{vm.post.author}}</a></span>
         </div>
 
-        <div class="row post-content">
+        <div class="post-content">
             <p ng-bind-html="vm.post.body | stripHTML | htmlExcerpt"></p>
         </div>
     </div>

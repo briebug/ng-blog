@@ -89,6 +89,90 @@
     angular.module('ngBlog.components.search', []);
 })();
 
+(function() {
+    'use strict';
+
+    angular.module('ngBlog.filters.htmlExcerpt', ['ngLodash'])
+        .filter('htmlExcerpt', htmlExcerptFilter);
+
+    htmlExcerptFilter.$inject = ['$sce', '$filter', 'lodash'];
+
+    function htmlExcerptFilter($sce, $filter, lodash) {
+        return function(html) {
+            var excerpt = lodash.trunc(html, {length: 250, separator: / /});
+
+            return $sce.trustAsHtml(excerpt);
+        };
+    }
+})();
+
+(function() {
+    'use strict';
+
+    angular.module('ngBlog.filters.htmlSanitize', [])
+        .filter('htmlSanitize', htmlSanitizeFilter);
+
+    htmlSanitizeFilter.$inject = ['$sce'];
+    function htmlSanitizeFilter($sce) {
+        return function(htmlCode) {
+            return $sce.trustAsHtml(htmlCode);
+        };
+    }
+})();
+
+(function() {
+    'use strict';
+
+    angular.module('ngBlog.filters.hyphenate', [])
+        .filter('hyphenate', hyphenateFilter);
+
+    function hyphenateFilter() {
+        return function(text) {
+            if (text) {
+                return text.replace(/\s+/g, '-')
+                    .replace(/\./g, '-')
+                    .toLowerCase();
+            } else {
+                return text;
+            }
+        };
+    }
+})();
+
+(function() {
+    var app = angular.module('ngBlog.filters.stripHTML', []);
+
+    app.filter('stripHTML', stripHTMLFilter);
+
+    function stripHTMLFilter() {
+        return function(text) {
+            return text.replace(/<(?:.|\n)*?>/gm, '');
+        };
+    }
+})();
+
+(function () {
+    'use strict';
+
+    angular.module('ngBlog.services')
+        .factory('CategoryService', CategoryService);
+
+    CategoryService.$inject = ['restService'];
+
+    function CategoryService(restService) {
+
+        var resource = '/api/categories';
+
+        return {
+            loadAll: loadAll
+        };
+
+        function loadAll() {
+            return restService.GET(resource);
+        }
+    }
+})();
+
 (function () {
     'use strict';
 
@@ -369,68 +453,6 @@
 (function() {
     'use strict';
 
-    angular.module('ngBlog.filters.htmlExcerpt', ['ngLodash'])
-        .filter('htmlExcerpt', htmlExcerptFilter);
-
-    htmlExcerptFilter.$inject = ['$sce', '$filter', 'lodash'];
-
-    function htmlExcerptFilter($sce, $filter, lodash) {
-        return function(html) {
-            var excerpt = lodash.trunc(html, {length: 250, separator: / /});
-
-            return $sce.trustAsHtml(excerpt);
-        };
-    }
-})();
-
-(function() {
-    'use strict';
-
-    angular.module('ngBlog.filters.htmlSanitize', [])
-        .filter('htmlSanitize', htmlSanitizeFilter);
-
-    htmlSanitizeFilter.$inject = ['$sce'];
-    function htmlSanitizeFilter($sce) {
-        return function(htmlCode) {
-            return $sce.trustAsHtml(htmlCode);
-        };
-    }
-})();
-
-(function() {
-    'use strict';
-
-    angular.module('ngBlog.filters.hyphenate', [])
-        .filter('hyphenate', hyphenateFilter);
-
-    function hyphenateFilter() {
-        return function(text) {
-            if (text) {
-                return text.replace(/\s+/g, '-')
-                    .replace(/\./g, '-')
-                    .toLowerCase();
-            } else {
-                return text;
-            }
-        };
-    }
-})();
-
-(function() {
-    var app = angular.module('ngBlog.filters.stripHTML', []);
-
-    app.filter('stripHTML', stripHTMLFilter);
-
-    function stripHTMLFilter() {
-        return function(text) {
-            return text.replace(/<(?:.|\n)*?>/gm, '');
-        };
-    }
-})();
-
-(function() {
-    'use strict';
-
     angular
         .module('ngBlog.components.archives')
         .directive('archives', archivesDirective);
@@ -581,6 +603,6 @@
 angular.module("ngBlog").run(["$templateCache", function($templateCache) {$templateCache.put("js/components/archives/archives.html","<div id=archives class=sidebar-widget><h3>Archives</h3><ul><li ng-repeat=\"archive in vm.archives\"><a ui-sref=\"articlesByMonthYear({archive: archive})\">{{archive.monthYear}}</a></li></ul></div>");
 $templateCache.put("js/components/categories/categories.html","<div id=categories class=sidebar-widget><h3>Categories</h3><ul><li ng-repeat=\"category in vm.categories\"><a ui-sref=\"articlesByCategory({category: category})\">{{category.name}}</a></li></ul></div>");
 $templateCache.put("js/components/post/post.html","<div class=single-content><div class=\"post-header single-header-outer\"><h2>{{vm.post.title}}</h2><span class=post-date>{{vm.post.scheduled | date : format : longDate}}</span> <span class=post-author>By <a ui-sref=\"postsByAuthor({author: vm.post.author})\">{{vm.post.author}}</a></span></div><div class=single-content-outer><p ng-bind-html=\"vm.post.body | htmlSanitize\"></p></div></div>");
-$templateCache.put("js/components/postSummary/postSummary.html","<article class=post-content-con><div class=post-image-outer ng-show=vm.post.header.imageUrl><a ui-sref=\"post({linkUrl: vm.post.link})\"><img ng-src=vm.post.header.imageUrl alt=vm.post.header.imageAlt></a></div><div class=post-content-outer><div class=post-header><h3><a ui-sref=\"post({year: (vm.post.scheduled | date:\'yyyy\'), month: (vm.post.scheduled | date:\'MM\'), day: (vm.post.scheduled | date:\'dd\'), name: (vm.post.title | hyphenate)})\">{{vm.post.title}}</a></h3><span class=post-date>{{vm.post.scheduled | date : format : longDate}}</span> <span class=post-author>By <a ui-sref=\"postsByAuthor({author: vm.post.author})\">{{vm.post.author}}</a></span></div><div class=\"row post-content\"><p ng-bind-html=\"vm.post.body | stripHTML | htmlExcerpt\"></p></div></div></article>");
+$templateCache.put("js/components/postSummary/postSummary.html","<article class=post-content-con><div class=post-image-outer ng-show=vm.post.header.imageUrl><a ui-sref=\"post({linkUrl: vm.post.link})\"><img ng-src=vm.post.header.imageUrl alt=vm.post.header.imageAlt></a></div><div class=post-content-outer><div class=post-header><h3><a ui-sref=\"post({year: (vm.post.scheduled | date:\'yyyy\'), month: (vm.post.scheduled | date:\'MM\'), day: (vm.post.scheduled | date:\'dd\'), name: (vm.post.title | hyphenate)})\">{{vm.post.title}}</a></h3><span class=post-date>{{vm.post.scheduled | date : format : longDate}}</span> <span class=post-author>By <a ui-sref=\"postsByAuthor({author: vm.post.author})\">{{vm.post.author}}</a></span></div><div class=post-content><p ng-bind-html=\"vm.post.body | stripHTML | htmlExcerpt\"></p></div></div></article>");
 $templateCache.put("js/components/recentPosts/recentPosts.html","<div id=recent-post class=sidebar-widget><h3>Recent Posts</h3><ul><li ng-repeat=\"post in vm.recentPosts\"><a ui-sref=\"post({linkUrl: post.linkUrl})\">{{post.title}}</a></li></ul></div>");
 $templateCache.put("js/components/search/search.html","<div id=search class=sidebar-widget><input type=text name=search></div>");}]);

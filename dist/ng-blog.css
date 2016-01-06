@@ -16,7 +16,7 @@
 	width: 100%;
 }
 
-.bannaer-title{
+.banner-title{
 	float: left;
 	width: 100%;
 	position: absolute;
@@ -29,11 +29,11 @@
 	transform: translate(-50%, -50%);
 }
 
-.bannaer-title h1{
+.banner-title h1{
 	color: #ffffff;
 }
 
-.bannaer-title {
+.banner-title {
 	float: left;
 	width: 100%;
 	position: absolute;
@@ -531,7 +531,7 @@ section {
 	width: 100%;
 }
 
-.post-header h3{
+.post-header h3 {
 	color: #ed500d;
 	text-transform: capitalize;
 	margin: 5px 0 10px;
